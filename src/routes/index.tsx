@@ -17,6 +17,10 @@ const route = [
             {
                 path: 'create',
                 element: lazy(() => import('../pages/HomeTemplate/CreateProject/CreateProject').then(({ CreateProject }) => ({ default: CreateProject })),),
+            },
+            {
+                path: 'create-task',
+                element: lazy(() => import('../pages/HomeTemplate/CreateTask/CreateTask').then(({ CreateTask }) => ({ default: CreateTask })),),
             }
         ]
     }

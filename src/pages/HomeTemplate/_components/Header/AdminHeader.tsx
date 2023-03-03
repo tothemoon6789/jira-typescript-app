@@ -6,6 +6,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import HelpIcon from '@mui/icons-material/Help';
 import HomeIcon from '@mui/icons-material/Home';
 import Search from './_components/Search';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -15,6 +16,7 @@ export interface IHeaderProps {
 }
 
 export function AdminHeader(props: IHeaderProps) {
+    const navigate = useNavigate()
     const {
         token: { colorBgContainer },
     } = theme.useToken();
@@ -24,6 +26,9 @@ export function AdminHeader(props: IHeaderProps) {
                     <div style={{ display: 'flex', justifyContent: 'end', alignItems: 'center'}}>
                     <Tooltip title="Film Homepage!">
                             <Button
+                            onClick={() => {
+                                navigate('/')
+                            }}
                                 style={{
                                     border: 'none',
                                     display:'flex',

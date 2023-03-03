@@ -27,19 +27,10 @@ export function MenuLeftNavBar(props: IMenuLeftNavBarProps) {
     },
     {
       icon: <AddIcon />,
-      key: 'addfilm',
-      label: 'Thêm mới phim'
-    },
-    {
-      icon: <AccessAlarmIcon />,
-      key: 'makeShowing',
-      label: 'Tạo lịch chiếu'
-    },
-    {
-      icon: <PersonAddIcon />,
-      key: 'addUser',
-      label: 'Thêm người dùng'
+      key: 'creat-task',
+      label: 'Create Task'
     }
+    
   ]
   return (
     <>
@@ -60,21 +51,12 @@ export function MenuLeftNavBar(props: IMenuLeftNavBarProps) {
               navigate('/create')
               console.log(event);
               break;
-            case 'addfilm':
-              navigate('/admin/addnew')
+            case 'creat-task':
+              navigate('/create-task')
               console.log(event);
               break;
-            case 'makeShowing':
-              navigate('/admin/show-time')
-              console.log(event);
-              break;
-            case 'addUser':
-              navigate('/admin/add-new-user')
-              console.log(event);
-              break;
-
             default:
-              navigate('/home')
+              navigate('/')
               break;
           }
         }}
