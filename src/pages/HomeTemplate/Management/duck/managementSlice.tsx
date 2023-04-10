@@ -40,7 +40,6 @@ export const managementSlice = createSlice({
                 state.loading = true
             })
             .addCase(managementThunk.fulfilled, (state, action) => {
-                console.log(action.payload);
                 state.loading = false
                 state.allProject = action.payload.content
                 

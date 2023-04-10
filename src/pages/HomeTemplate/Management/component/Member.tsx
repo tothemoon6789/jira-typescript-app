@@ -10,7 +10,7 @@ export function Member(props: IMemberProps) {
   const { data } = props
   const renderUser = () => {
     return data?.map((user: any, index: number) => {
-      return index > 0 && <Avatar src={user.avatar} />
+      return index > 0 && <Avatar key={index} src={user.avatar} />
     })
   }
   return (

@@ -3,6 +3,8 @@ import * as React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Spiner from '../../../components/Loading/Spiner/Spiner';
 import { AppDispatch, RootState } from '../../../store';
+import { dropdownThunk } from '../../_duck/dropdownSlice';
+import { TokenBearer } from '../HomeTemplate';
 import { Modal } from './component/Modal';
 import { Row } from './component/Row';
 import { managementThunk } from './duck/managementSlice';
@@ -14,8 +16,10 @@ export function Management(props: IManagementProps) {
     const dispatch = useDispatch<AppDispatch>()
     const allProject = useSelector((state: RootState) => state.management.allProject)
     const loading = useSelector((state: RootState) => state.management.loading)
+    const accessToken = React.useContext(TokenBearer)
     React.useEffect(() => {
         dispatch(managementThunk())
+        dispatch(dropdownThunk(accessToken))
     },[])
 
     const renderRow = () => {
@@ -43,8 +47,6 @@ export function Management(props: IManagementProps) {
             </tbody>
         </table>
             {loading && <Spiner/>}
-           
         </div>
-
     );
 }

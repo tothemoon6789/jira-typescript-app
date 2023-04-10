@@ -21,10 +21,9 @@ function App() {
       <BrowserRouter>
         <Routes>
           {renderRoute()}
-         
         </Routes>
       </BrowserRouter>
-    // </Suspense>
+     </Suspense>
   );
 }
 
